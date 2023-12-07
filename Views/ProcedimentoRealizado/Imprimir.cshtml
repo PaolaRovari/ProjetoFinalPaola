@@ -1,0 +1,39 @@
+﻿@page
+@model ProjetoFinalPaola.Models.ProcedimentoRealizado
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/css/Imprimir.css" asp-append-version="true" />
+<div>
+    <main class="geral">
+        <header class="titulo">
+            <img class="logo" src="~/img/laboratoriorovari.png" alt="logo">
+            <h1>LABORATÓRIO ROVARI</h1>
+        </header>
+        <div class="horarios">
+            <h4>Data da Realização: @Html.DisplayFor(model => model.DataRealizacao)</h4>
+            <h4>Local da Realização: @Html.DisplayFor(model => model.LocalRealizacao.LocalRealizacaoNome)</h4>
+        </div>
+        <div>
+            <div><span>Cliente: @Html.DisplayFor(model => model.Cliente.ClienteNome)</span></div>
+            <div><span>Cpf: @Html.DisplayFor(model => model.Cliente.ClienteCpf)</span></div>
+            <div><span>Sexo: @Html.DisplayFor(model => model.Cliente.ClienteSexo) </span></div>
+            <div><span>Telefone: @Html.DisplayFor(model => model.Cliente.ClienteTelefone)</span></div>
+            <div><span>Endereço: @Html.DisplayFor(model => model.Cliente.ClienteEndereco) - Nº @Html.DisplayFor(model => model.Cliente.ClienteNumero)  </span></div>
+            <div><span>Colaborador: @Html.DisplayFor(model => model.Colaborador.ColaboradorNome) </span></div>
+            <div><span>Clínica: ClinsRovari</span></div>
+        </div>
+        <hr class="linha">
+        <div>
+            <span>PROCEDIMENTO: @Html.DisplayFor(model => model.Procedimento.ProcedimentoNome)</span>
+        </div>
+        <div>
+            <h4> OBSERVAÇÃO: @Html.DisplayFor(model => model.ObservacaoRealizacao)</h4>
+        </div>
+        <div class="metodo">
+            <div>
+                <span>METODOLOGIA: Colorimétrico enzimático</span>
+            </div>
+        </div>
+    </main>
+</div>

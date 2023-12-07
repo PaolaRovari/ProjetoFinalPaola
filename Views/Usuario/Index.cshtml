@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjetoFinalPaola.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Usuário</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Cadastrar Usuário</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioSenha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioSenha)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.UsuarioId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.UsuarioId" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.UsuarioId" class="btn btn-primary"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
